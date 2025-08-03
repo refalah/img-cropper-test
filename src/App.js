@@ -60,7 +60,7 @@ function App() {
       const cropX = coordinates[0].x;
       const cropY = coordinates[0].y;
       const cropWidth = coordinates[coordinates.length - 1].x;
-      const cropHeight = coordinates[coordinates.length - 1].y - coordinates[0].y;
+      const cropHeight = coordinates[coordinates.length - 1].y - cropY;
 
       context.canvas.width = cropWidth
       context.canvas.height = coordinates[coordinates.length - 1].y
