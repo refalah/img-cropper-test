@@ -60,15 +60,14 @@ function App() {
       const cropX = coordinates[0].x;
       const cropY = coordinates[0].y;
       const cropWidth = coordinates[coordinates.length - 1].x;
-      const cropHeight = coordinates[coordinates.length - 1].y;
+      const cropHeight = coordinates[coordinates.length - 1].y - coordinates[0].y;
 
       console.log(cropX, cropY, cropWidth, cropHeight, 'check')
 
       context.drawImage(theImage, cropX, cropY, cropWidth, cropHeight, cropX, cropY, cropWidth, cropHeight);
       // context.drawImage(theImage, cropX, cropY, cropWidth, cropHeight, 0, 0, theImage.naturalWidth, theImage.naturalHeight);
       // context.drawImage(theImage, cropX, cropY, cropWidth, cropHeight, 0, 0, cropWidth, cropHeight);
-      console.log(acceptedArr, 'ACC')
-      console.log(coordinates, 'COO')
+      console.log(coordinates, 'COORDINATES')
     }
 
   }, [])
