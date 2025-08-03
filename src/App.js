@@ -62,9 +62,12 @@ function App() {
       const cropWidth = coordinates[coordinates.length - 1].x;
       const cropHeight = coordinates[coordinates.length - 1].y - coordinates[0].y;
 
+      context.canvas.width = cropWidth
+      context.canvas.height = coordinates[coordinates.length - 1].y
+
       console.log(cropX, cropY, cropWidth, cropHeight, 'check')
 
-      context.drawImage(theImage, cropX, cropY, cropWidth, cropHeight, cropX, cropY, cropWidth, cropHeight);
+      context.drawImage(theImage, cropX, cropY, cropWidth, cropHeight, 0, 0, context.canvas.width, context.canvas.height);
       // context.drawImage(theImage, cropX, cropY, cropWidth, cropHeight, 0, 0, theImage.naturalWidth, theImage.naturalHeight);
       // context.drawImage(theImage, cropX, cropY, cropWidth, cropHeight, 0, 0, cropWidth, cropHeight);
       console.log(coordinates, 'COORDINATES')
